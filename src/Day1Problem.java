@@ -11,15 +11,12 @@ public class Day1Problem {
 		WebDriver driver = new ChromeDriver();
 		
 		driver.get("https://www.worldometers.info/world-population/");
-	
+		
+		//code for running loop for 20 seconds
 		//https://stackoverflow.com/questions/19727109/how-to-exit-a-while-loop-after-a-certain-time#:~:text=If%20you%20want%20to%20exactly,kill%20after%20a%20certain%20timeout.&text=Something%20like%3A,%2B%20wait_time%3B%20while%20(System.
 		long start_time = System.currentTimeMillis();
 		long wait_time = 20000;
 		long end_time = start_time + wait_time;
-		
-		
-		
-		
 		
 		while(System.currentTimeMillis() < end_time)
 		{
@@ -33,11 +30,7 @@ public class Day1Problem {
 			System.out.println("Deaths This year: " + driver.findElement(By.cssSelector("span[rel='dth1s_this_year']")).getText());
 			System.out.println("Population This year: " + driver.findElement(By.cssSelector("span[rel='absolute_growth_year']")).getText());
 			System.out.println("***************************\n");
-			
 		}
-		
-		
-		
 		
 		driver.close();
 		
